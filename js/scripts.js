@@ -1,13 +1,3 @@
-function load_next_step(actual_step_number) {
-    var next_step_number = Number(actual_step_number) + 1;
-
-    $('#step_' + next_step_number + ' :input').removeAttr('disabled');
-
-    if (actual_step_number != 0) {
-        $('#step_' + actual_step_number + ' :input').attr('disabled', true);
-    }
-}
-
 function getDiceRoll(die) {
     return Math.floor(Math.random() * die) + 1;
 }

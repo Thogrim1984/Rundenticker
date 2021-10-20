@@ -33,27 +33,19 @@ function getResultObject(type, number) {
 }
 
 function updateActualBp(bp) {
-    var actualBp = document.getElementById("actualBp").value;
+    var actualBp = $("actualBp").val() + bp;
 
-    document.getElementById("actualBp").value = Number(actualBp) + bp;
+    $("actualBp").val() = actualBp;
 
-    return Number(actualBp) + bp;
+    return actualBp;
 }
 
 function updateActualUnrest(unrest) {
-    var actualUnrest = document.getElementById("actualUnrest").value;
+    var actualUnrest = $("#actualUnrest").val() + unrest;
 
-    document.getElementById("actualUnrest").value = Number(actualUnrest) + unrest;
+    $("#actualUnrest").val() = actualUnrest;
 
-    return Number(actualUnrest) + unrest;
-}
-
-function updateDistrictCount() {
-    var districtCount = document.getElementById("districtCount").value;
-
-    document.getElementById("districtCount").value = Number(districtCount) + 1;
-
-    return Number(districtCount) + 1;
+    return actualUnrest;
 }
 
 function nextStep(result, actualPhase, actualStep) {
