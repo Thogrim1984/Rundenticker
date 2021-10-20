@@ -33,38 +33,30 @@ Ihr könnt so viele Geländeverbesserungen bauen:
     </tr>
 </table>
 
-<div data-activatable="yes" id="step_3">
+<div>
     <form>
-        <label for="2_3_buildTerrainImprovements">Wie viele BP wurden für Geländeverbesseungen ausgegeben?</label>
-        <input id="2_3_buildTerrainImprovements" type="number" min="0" value="0"> <br>
-        <label for="2_3_prepareSettlements">Wie viele BP wurden für Siedlungsvorbereitungen ausgegeben?</label>
-        <input id="2_3_prepareSettlements" type="number" min="0" value="0"> <br>
-        <button type="button" name="2_3_resultButton">Weiter</button>
+        <label for="step_2_3_buildTerrainImprovements">Wie viele BP wurden für Geländeverbesseungen ausgegeben? <input id="step_2_3_buildTerrainImprovements" type="number" min="0" value="0"></label><br />
+        <label for="step_2_3_prepareSettlements">Wie viele BP wurden für Siedlungsvorbereitungen ausgegeben? <input id="step_2_3_prepareSettlements" type="number" min="0" value="0"></label><br />
+        <button type="button" name="resultButton" id="step_2_3_resultButton">Weiter</button>
     </form>
-</div>
-
-<div data-activatable="yes" id="step_4">
-    Ergebnis:<br>
-    <span id="2_3_result"></span><br>
-    <button type="button" name="next_step" value="4" onclick="load_next_step(this.value)">Weiter</button>
 </div>
 
 <script>
     $(document).ready(function() {
-        $("button[name='2_3_resultButton']").click(function() {
+        $("#step_2_3_resultButton").click(function() {
 
-            var bpCost = Number($('#2_3_buildTerrainImprovements').val()) + Number($('#2_3_prepareSettlements').val());
+            var bpCost = $('#step_2_3_buildTerrainImprovements').val() + $('#step_2_3_prepareSettlements').val();
 
             var resultText = [];
             if (bpCost > 0) {
-                resultText.push(getResult([getResultObject("bp", bpCost)]));
+                resultText.push(getResult([getResultObject("bp", updateActualeBp(bpCost))]));
             } else {
                 resultText = getResult([getResultObject("nothing", 0)]);
             }
-            if ($('#2_3_prepareSettlements').val() != 0) {
+            if ($('#step_2_3_prepareSettlements').val() != 0) {
                 resultText.push('Siedlungsvorbereitungen mit Enddatum in die Ereignisse eintragen.');
             }
-            $('#2_3_result').html(resultText.join("<br />"));
+            nextStep(resultText.join("<br />"), 2, 3);
         });
     });
 </script>
