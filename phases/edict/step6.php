@@ -106,12 +106,21 @@
     </tr>
 </table>
 
-<div data-activatable="yes" id="step_4">
-    Ergebnis:<br>
-    <span id="2-1-result_suche" class="hiddenResult">Die geänderten Erlasse eintragen</span>
-    <span id="2-1-keine_aenderung" class="hiddenResult">Keine Änderungen nötig.</span>
-    <button type="button" name="next_step" value="4" onclick="load_next_step(this.value)">Weiter</button>
+Spezialerlasse:
+<ul>
+    <li>Diplomatie</li>
+    <li>Erkundung</li>
+    <li>Handel</li>
+    <li>Vasallen</li>
+</ul>
+
+
+<div>
+    <button type="button" name="resultButton" id="step_2_6_resultButton">Weiter</button>
 </div>
 
 <script>
+    $("#step_2_6_resultButton']").click(function() {
+        nextStep('Denk dran, die neuen Erlasse einzutragen', 2, 6);
+    });
 </script>
