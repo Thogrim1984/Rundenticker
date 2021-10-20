@@ -25,35 +25,24 @@ Eine WIR-Probe pro Siedlungsviertel möglich,
     </tr>
 </table>
 
-<div data-activatable="yes" id="step_3">
+<div>
     <form>
-        <label for="3_3_sellItemsForBp">Wieviele BP werden durch die Verkäufe generiert?</label>
-        <input id="3_3_sellItemsForBp" type="number" min="0" value="0"> <br>
-    <button type="button" name="3_3_resultButton">Weiter</button>
+        <label for="step_3_3_sellItemsForBp">Wieviele BP werden durch die Verkäufe generiert? <input id="step_3_3_sellItemsForBp" type="number" min="0" value="0"></label> <br />
+        <button type="button" name="resultButton" id="step_3_3_resultButton">Weiter</button>
     </form>
 </div>
 
-<div data-activatable="yes" id="step_4">
-    Ergebnis:<br>    
-    <span id="3_3_result"></span>
-    <span id="1-2-result_bp" class="hiddenResult">BP ändern auf <span id="1-2-result_bp_number">[Nummer]</span>.</span>
-    <span id="1-4-keine_aenderung" class="hiddenResult">Keine Änderungen nötig.</span>
-    <button type="button" name="next_step" value="4" onclick="load_next_step(this.value)">Weiter</button>
-</div>
-
 <script>
-    $(document).ready(function() {
-        $("button[name='3_3_resultButton']").click(function() {
+    $("#step_3_3_resultButton").click(function() {
 
-            var bpCost = Number($('#3_3_sellItemsForBp').val());
+        var bp = $('#step_3_3_sellItemsForBp').val();
 
-            var resultText = [];
-            if (bpCost > 0) {
-                resultText.push(getResult([getResultObject("bp", bpCost)]));
-            } else {
-                resultText = getResult([getResultObject("nothing", 0)]);
-            }
-            $('#3_3_result').html(resultText.join("<br />"));
-        });
+        var resultText = [];
+        if (bp > 0) {
+            resultText.push(getResult([getResultObject("bp", updateActualBp(bp))]));
+        } else {
+            resultText = getResult([getResultObject("nothing", 0)]);
+        }
+        nextStep(resultText.join("<br />", 3, 3));
     });
 </script>
