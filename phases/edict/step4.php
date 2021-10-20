@@ -40,35 +40,25 @@ Ihr könnt so viele Geländeverbesserungen bauen:
     </tr>
 </table>
 
-<div data-activatable="yes" id="step_3">
+<div>
     <form>
-        <label for="2_4_foundSettlements">Wie viele Siedlungen wurden gegründet (vorbereitetes Gelände vorausgesetzt)?</label>
-        <input id="2_4_foundSettlements" type="number" min="0" value="0"> <br>
-        <label for="2_4_constructBuildings">Wie viele BP wurden für Gebäude ausgegeben?</label>
-        <input id="2_4_constructBuildings" type="number" min="0" value="0"> <br>
-        <button type="button" name="2_4_resultButton">Weiter</button>
+        <label for="step_2_4_foundSettlements">Wie viele Siedlungen wurden gegründet (vorbereitetes Gelände vorausgesetzt)? <input id="step_2_4_foundSettlements" type="number" min="0" value="0"></label><br />
+        <label for="step_2_4_constructBuildings">Wie viele BP wurden für Gebäude ausgegeben? <input id="step_2_4_constructBuildings" type="number" min="0" value="0"></label><br />
+        <button type="button" name="resultButton" id="step_2_4_resultButton">Weiter</button>
     </form>
 </div>
 
-<div data-activatable="yes" id="step_4">
-    Ergebnis:<br>
-    <span id="2_4_result"></span><br>
-    <button type="button" name="next_step" value="4" onclick="load_next_step(this.value)">Weiter</button>
-</div>
-
 <script>
-    $(document).ready(function() {
-        $("button[name='2_4_resultButton']").click(function() {
+    $("#step_2_4_resultButton']").click(function() {
 
-            var bpCost = Number($('#2_4_constructBuildings').val());
+        var bpCost = $('#step_2_4_constructBuildings').val();
 
-            var resultText = [];
-            if (bpCost > 0) {
-                resultText =getResult([getResultObject("bp", bpCost)]);
-            } else {
-                resultText = getResult([getResultObject("nothing", 0)]);
-            }
-            $('#2_4_result').html(resultText.join("<br />"));
-        });
+        var resultText = [];
+        if (bpCost > 0) {
+            resultText = getResult([getResultObject("bp", updateActualBp(bpCost))]);
+        } else {
+            resultText = getResult([getResultObject("nothing", 0)]);
+        }
+        nextStep(resultText.join("<br />"), 2, 4);
     });
 </script>
