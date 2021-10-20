@@ -46,7 +46,7 @@
         } else {
             resultText = getResult([getResultObject("nothing", 0)]);
         }
-        nextStep(resultText.join("<br />"));
+        nextStep(resultText.join("<br />"), 2, 1);
     });
 
     function deleteRequirementFromCandidateSearch(searchCounter, requirementCounter) {

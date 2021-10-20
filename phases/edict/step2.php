@@ -55,18 +55,18 @@ Ihr könnt so viele Hexfelder einnehmen:
             var noChange = true;
 
             if ($('#step_2_2_claimHex').val() > 0) {
-                hexCount += Number($('#step_2_2_claimHex').val());
-                bpCost += Number($('#step_2_2_claimHex').val());
+                hexCount += ('#step_2_2_claimHex').val();
+                bpCost += $('#step_2_2_claimHex').val();
             }
 
             if ($('#step_2_2_abandonHex').val() > 0) {
-                newUnrest += Number($('#step_2_2_abandonHex').val());
-                hexCount -= Number($('#step_2_2_abandonHex').val());
+                newUnrest += $('#step_2_2_abandonHex').val();
+                hexCount -= $('#step_2_2_abandonHex').val();
             }
 
             if ($('#step_2_2_abandonSettlement').val() > 0) {
-                newUnrest += Number($('#step_2_2_abandonSettlement').val()) * 3;
-                hexCount -= Number($('#step_2_2_abandonSettlement').val());
+                newUnrest += $('#step_2_2_abandonSettlement').val() * 3;
+                hexCount -= $('#step_2_2_abandonSettlement').val();
             }
 
 
@@ -80,17 +80,17 @@ Ihr könnt so viele Hexfelder einnehmen:
                 noChange = false;
             }
             if (newUnrest > 0) {
-                resultText.push(getResult([getResultObject("unrest", newUnrest)]));
+                resultText.push(getResult([getResultObject("unrest", updateActualUnrest(newUnrest))]));
                 noChange = false;
             }
             if (bpCost > 0) {
-                resultText.push(getResult([getResultObject("bp", bpCost)]));
+                resultText.push(getResult([getResultObject("bp", updateActualBp(bpCost))]));
                 noChange = false;
             }
             if (noChange) {
                 resultText = getResult([getResultObject("nothing", 0)]);
             }
-            $('#step_2_2_result').html(resultText.join("<br />"));
+            nextStep(resultText.join("<br />"),2,2);
         });
     });
 </script>
