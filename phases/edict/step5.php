@@ -41,7 +41,7 @@
             resultText.push('Denk dran, die Erfahrungspunkte/Aufstiege für Einheiten in Bereitschaft einzutragen.');
         } else {
             if (bpCost > 0) {
-                resultText.push(getResult([getResultObject("bp", updateActualBp(bpCost))]));
+                resultText.push(getResult([getResultObject("bp", updateActualBp(-bpCost))]));
                 noChanges = false;
             }
             if ($("#step_2_5_disbandUnitsSuccess").is(':checked')) {

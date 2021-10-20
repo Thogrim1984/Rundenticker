@@ -80,7 +80,7 @@ Ihr könnt so viele Hexfelder einnehmen:
             noChange = false;
         }
         if (bpCost > 0) {
-            resultText.push(getResult([getResultObject("bp", updateActualBp(bpCost))]));
+            resultText.push(getResult([getResultObject("bp", updateActualBp(-bpCost))]));
             noChange = false;
         }
         if (noChange) {

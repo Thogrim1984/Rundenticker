@@ -48,7 +48,7 @@ Ihr könnt so viele Geländeverbesserungen bauen:
 
             var resultText = [];
             if (bpCost > 0) {
-                resultText.push(getResult([getResultObject("bp", updateActualeBp(bpCost))]));
+                resultText.push(getResult([getResultObject("bp", updateActualeBp(-bpCost))]));
             } else {
                 resultText = getResult([getResultObject("nothing", 0)]);
             }
