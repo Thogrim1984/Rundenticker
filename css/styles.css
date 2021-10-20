@@ -1,0 +1,21 @@
+.overviewUpcomingStep {
+
+}
+
+.overviewActualStep {
+    color: green;
+    text-decoration: underline;
+}
+
+.overviewPastStep {
+    text-decoration: line-through;
+}
+
+.main {
+    display:flex;
+    flex-direction: column;
+}
+
+.contentContainer {
+    display:flex;
+}

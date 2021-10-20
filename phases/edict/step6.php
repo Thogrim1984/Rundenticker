@@ -1,0 +1,117 @@
+<h2>Schritt 6: Erlasse</h2>
+
+<div data-activatable="yes" id="step_3">
+    <form>
+        <label>Ändert die Erlasse, wenn ihr das wollt.</label><br>
+        <button type="button" name="next_step" value="4" onclick="load_next_step(this.value)">Weiter</button>
+    </form>
+</div>
+
+<table>
+    <tr>
+        <th>Festlichkeiten</th>
+        <th>LOY</th>
+        <th>Unterhalt</th>
+    </tr>
+    <tr>
+        <td>Keine</td>
+        <td>-1/-10%</td>
+        <td>+0</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>+1/+10%</td>
+        <td>+1/+10%</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>+2/+20%</td>
+        <td>+2/+20%</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>+3/+30%</td>
+        <td>+4/+40%</td>
+    </tr>
+    <tr>
+        <td>24</td>
+        <td>+4/+40%</td>
+        <td>+8/+80%</td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <th>Förderung</th>
+        <th>STA</th>
+        <th>Unruhe</th>
+    </tr>
+    <tr>
+        <td>Keine</td>
+        <td>-1/-10%</td>
+        <td>+0</td>
+    </tr>
+    <tr>
+        <td>Schein</td>
+        <td>+1/+10%</td>
+        <td>+1/+10%</td>
+    </tr>
+    <tr>
+        <td>Standard</td>
+        <td>+2/+20%</td>
+        <td>+2/+20%</td>
+    </tr>
+    <tr>
+        <td>Aggressiv</td>
+        <td>+3/+30%</td>
+        <td>+4/+40%</td>
+    </tr>
+    <tr>
+        <td>Expansionistisch</td>
+        <td>+4/+40%</td>
+        <td>+8/+80%</td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <th>Besteuerung</th>
+        <th>STA</th>
+        <th>Unruhe</th>
+    </tr>
+    <tr>
+        <td>Keine</td>
+        <td>+0</td>
+        <td>+1/+10%</td>
+    </tr>
+    <tr>
+        <td>Leicht</td>
+        <td>+1/+10%</td>
+        <td>-1/-10%</td>
+    </tr>
+    <tr>
+        <td>Normal</td>
+        <td>+2/+20%</td>
+        <td>-2/-20%</td>
+    </tr>
+    <tr>
+        <td>Schwer</td>
+        <td>+3/+30%</td>
+        <td>-4/-40%</td>
+    </tr>
+    <tr>
+        <td>Erdrückend</td>
+        <td>+4/+40%</td>
+        <td>-8/-80%</td>
+    </tr>
+</table>
+
+<div data-activatable="yes" id="step_4">
+    Ergebnis:<br>
+    <span id="2-1-result_suche" class="hiddenResult">Die geänderten Erlasse eintragen</span>
+    <span id="2-1-keine_aenderung" class="hiddenResult">Keine Änderungen nötig.</span>
+    <button type="button" name="next_step" value="4" onclick="load_next_step(this.value)">Weiter</button>
+</div>
+
+<script>
+</script>
