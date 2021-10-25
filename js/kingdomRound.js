@@ -33,25 +33,25 @@ function getResultObject(type, number) {
 }
 
 function updateActualBp(bp) {
-    var actualBp = $("actualBp").val() + bp;
+    var actualBp =Number($("#actualBp").val()) + bp;
 
-    $("actualBp").val() = actualBp;
+    $("#actualBp").val(actualBp);
 
     return actualBp;
 }
 
 function updateActualUnrest(unrest) {
-    var actualUnrest = $("#actualUnrest").val() + unrest;
+    var actualUnrest = Number($("#actualUnrest").val()) + unrest;
 
-    $("#actualUnrest").val() = actualUnrest;
+    $("#actualUnrest").val(actualUnrest);
 
     return actualUnrest;
 }
 
 function nextStep(result, actualPhase, actualStep) {
-    var resultDialog = document.getElementById('resultDialog'),
-        continueButton = document.getElementById("continueButton"),
-        backButton = document.getElementById("backButton");
+    var resultDialog = $("#resultDialog"),
+        continueButton = $("#continueButton"),
+        backButton = $("#backButton");
 
     $("#result").html(result);
     showDialog();
