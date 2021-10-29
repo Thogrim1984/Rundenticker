@@ -13,7 +13,7 @@
 <script>
     $("#step_3_1_resultButton").click(function() {
 
-        var bpCost = $('#step_3_1_withdrawelBp').val();
+        var bpCost = Number($('#step_3_1_withdrawelBp').val());
 
         var resultText = [];
         if (bpCost > 0) {

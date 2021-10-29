@@ -10,7 +10,7 @@
 <script>
     $("#step_3_2_resultButton").click(function() {
 
-        var bp = $('#step_3_2_depositBpCount').val();
+        var bp = Number($('#step_3_2_depositBpCount').val());
 
         var resultText = [];
         if (bp > 0) {

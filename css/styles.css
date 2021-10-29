@@ -1,21 +1,169 @@
-.overviewUpcomingStep {
-
-}
-
-.overviewActualStep {
-    color: green;
-    text-decoration: underline;
-}
-
-.overviewPastStep {
+ul.step-overview li {
+    padding: 1px 4px 2px;
+    }
+    
+    ul.step-overview > li > .overviewActualStep {
+    font-weight: 600;
+    }
+    
+    ul.step-overview > li > ul > .overviewActualStep {
+    background-color: #CAEDED;
+    border-radius: 4px;
+    }
+    
+    .overviewUpcomingStep {
+    color: #787A7A;
+    }
+    
+    .overviewPastStep {
     text-decoration: line-through;
-}
-
-.main {
-    display:flex;
-    flex-direction: column;
-}
-
-.contentContainer {
-    display:flex;
-}
+    }
+    
+    
+    /* Basic Site Layout */
+    
+    .baseValueContainer {
+    margin-bottom: 3em;
+    }
+    
+    .baseValueContainer form {
+    width: max-content;
+    }
+    
+    .contentContainer {
+    display: flex;
+    justify-content: space-between;
+    }
+    
+    .contentContainer aside {
+    margin-right: 5.5%;
+    }
+    
+    #contentContainer {
+    flex-grow: 1;
+    }
+    
+    #content form {
+    margin-top: 0.35em;
+    }
+    
+    
+    /* Default-Resets and general Look */
+    
+    html {
+    background-color: #EDF4F5;
+    font-size: 17px;
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-underline-offset: 1px;
+    }
+    
+    body {
+    padding: 20px;
+    }
+    
+    body * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    line-height: 1.44em;
+    }
+    
+    dialog {
+    margin: auto;
+    padding: 1.25em 1.4em;
+    border: 2px solid #000;
+    border-radius: 4px;
+    }
+    
+    dialog::backdrop {
+        background: rgba(0, 0, 0, 0.3);
+    }
+    
+    dialog form {
+    padding: 0;
+    }
+    
+    button {
+    color: #FFF;
+    background-color: #0B646D;
+    padding: 0.2em 1em 0.31em;
+    margin-top: 1em;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 0.006em;
+    }
+    
+    button#backButton {
+    background-color: #A6E3E3;
+    color: #000;
+    }
+    
+    button:hover {
+    cursor: pointer;
+    }
+    
+    input[type="radio"] {
+    cursor: pointer;
+    }
+    
+    h1 {
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+    color: #EDF4F5;
+    background-color: #0B646D;
+    border-radius: 4px;
+    margin-bottom: 1.05em;
+    }
+    
+    h1 span {
+    display: block;
+    padding: 0 0 0.09em;
+    font-weight: inherit;
+    }
+    
+    h2 {
+    display: flex;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 1.05em;
+    }
+    
+    h2::before {
+    display: inline-block;
+    content: "\27B2";
+    color: #0B646D;
+    margin-right: 6px;
+    font-size: 32px;
+    }
+    
+    ul {
+    list-style-position: inside;
+    }
+    
+    ul ul {
+    padding-left: 3em;
+    }
+    
+    form {
+    background-color: #FFF;
+    padding: 1.25em 1.4em 1.3em;
+    border: none;
+    border-radius: 4px;
+    }
+    
+    form label {
+    margin-right: 0.4em;
+    }
+    
+    form input {
+    border: 1px solid #C8CCCC;
+    border-radius: 4px;
+    font-size: 17px;
+    padding: 2px 8px;
+    margin-bottom: 0.5em;
+    }

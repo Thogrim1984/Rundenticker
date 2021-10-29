@@ -51,18 +51,18 @@ Ihr könnt so viele Hexfelder einnehmen:
         var noChange = true;
 
         if ($('#step_2_2_claimHex').val() > 0) {
-            hexCount += ('#step_2_2_claimHex').val();
+            hexCount += Number($('#step_2_2_claimHex').val());
             bpCost += $('#step_2_2_claimHex').val();
         }
 
         if ($('#step_2_2_abandonHex').val() > 0) {
             newUnrest += $('#step_2_2_abandonHex').val();
-            hexCount -= $('#step_2_2_abandonHex').val();
+            hexCount -= Number($('#step_2_2_abandonHex').val());
         }
 
         if ($('#step_2_2_abandonSettlement').val() > 0) {
             newUnrest += $('#step_2_2_abandonSettlement').val() * 3;
-            hexCount -= $('#step_2_2_abandonSettlement').val();
+            hexCount -= Number($('#step_2_2_abandonSettlement').val());
         }
 
 

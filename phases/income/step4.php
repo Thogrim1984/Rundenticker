@@ -11,7 +11,7 @@
 <script>
     $("#step_3_4_resultButton").click(function() {
 
-        var bp = $('#step_3_4_collectTaxes').val();
+        var bp = Number($('#step_3_4_collectTaxes').val());
 
         if ($("#step_3_4_collectTaxesControlDc").is(':checked')) {
             bp /= 3;

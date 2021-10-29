@@ -33,31 +33,33 @@ function getResultObject(type, number) {
 }
 
 function updateActualBp(bp) {
-    var actualBp = $("actualBp").val() + bp;
+    var actualBp = Number($("#actualBp").val()) + bp;
 
-    $("actualBp").val() = actualBp;
+    $("#actualBp").val(actualBp);
 
     return actualBp;
 }
 
 function updateActualUnrest(unrest) {
-    var actualUnrest = $("#actualUnrest").val() + unrest;
+    var actualUnrest = Number($("#actualUnrest").val()) + unrest;
 
-    $("#actualUnrest").val() = actualUnrest;
+    $("#actualUnrest").val(actualUnrest);
 
     return actualUnrest;
 }
 
 function nextStep(result, actualPhase, actualStep) {
     var resultDialog = document.getElementById('resultDialog'),
-        continueButton = document.getElementById("continueButton"),
-        backButton = document.getElementById("backButton");
+        continueButton = $("#continueButton"),
+        backButton = $("#backButton");
 
     $("#result").html(result);
     showDialog();
 
-    continueButton.addEventListener('click', loadNextStep);
-    backButton.addEventListener('click', closeDialog);
+    continueButton.bind('click', loadNextStep);
+    backButton.bind('click', closeDialog);
+    
+    console.log(`${actualPhase} ${actualStep}`)
 
 
     function showDialog() {
@@ -68,12 +70,18 @@ function nextStep(result, actualPhase, actualStep) {
         resultDialog.close();
     }
 
+    function test() {
+        console.log("Test");
+    }
+
     function loadNextStep() {
+        continueButton.off();
+        
         // Im 2D-Array ist die erste Dimension die Phasen (0/1 bis 3/4), die zweite Dimension beinhaltet die Schritte mit identischem Index, da auf der 0 die Phasennamen (englisch) sind.
         var nextStep = 0,
             nextPhase = "";
 
-        if (roundNumbers[Number(actualPhase - 1)][Number(actualStep + 1)] != null) {
+        if (roundNumbers[Number(actualPhase - 1)][Number(actualStep + 1)] != undefined) {
             nextStep = roundNumbers[actualPhase - 1][actualStep + 1];
             nextPhase = roundNumbers[actualPhase - 1][0];
             actualizeOverview(actualPhase, Number(actualStep + 1));
@@ -86,6 +94,7 @@ function nextStep(result, actualPhase, actualStep) {
         var headlinePhase = nextPhase.charAt(0).toUpperCase() + nextPhase.slice(1);
 
         $("#contentHeadline").load(`./phases/headlines.php #headline${headlinePhase}Phase`);
+        console.log(`Phase ${nextPhase}, Schritt ${nextStep}`);
         $("#content").load(`./phases/${nextPhase}/step${nextStep}.php`);
         closeDialog();
     }

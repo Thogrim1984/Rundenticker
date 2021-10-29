@@ -3,7 +3,6 @@
 <div data-activatable="yes" id="step_3">
     <form>
         <label>Ändert die Erlasse, wenn ihr das wollt.</label><br>
-        <button type="button" name="next_step" value="4" onclick="load_next_step(this.value)">Weiter</button>
     </form>
 </div>
 
@@ -120,7 +119,7 @@ Spezialerlasse:
 </div>
 
 <script>
-    $("#step_2_6_resultButton']").click(function() {
+    $("#step_2_6_resultButton").click(function() {
         nextStep('Denk dran, die neuen Erlasse einzutragen', 2, 6);
     });
 </script>

@@ -49,9 +49,9 @@ Ihr könnt so viele Geländeverbesserungen bauen:
 </div>
 
 <script>
-    $("#step_2_4_resultButton']").click(function() {
+    $("#step_2_4_resultButton").click(function() {
 
-        var bpCost = $('#step_2_4_constructBuildings').val();
+        var bpCost = Number($('#step_2_4_constructBuildings').val());
 
         var resultText = [];
         if (bpCost > 0) {

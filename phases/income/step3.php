@@ -35,7 +35,7 @@ Eine WIR-Probe pro Siedlungsviertel möglich,
 <script>
     $("#step_3_3_resultButton").click(function() {
 
-        var bp = $('#step_3_3_sellItemsForBp').val();
+        var bp = Number($('#step_3_3_sellItemsForBp').val());
 
         var resultText = [];
         if (bp > 0) {

@@ -60,7 +60,7 @@
                 resultText = getResult([getResultObject("nothing", 0)]);
             }
         }
-        nextStep(resultText.join("<br />", 2, 5));
+        nextStep(resultText.join("<br />"), 2, 5);
     });
 
     $("input[id=step_2_5_noChanges]").change(function() {

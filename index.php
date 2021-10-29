@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Titel</title>
+    <title>Rundenticker</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
@@ -13,13 +13,14 @@
 <body>
 
     <main>
-        <div class="BaseValueContainer">
-            <?php include("baseValues.php"); ?>
+        <div class="baseValueContainer">
+            <?php include("./baseValues.php")?>
         </div>
         <div class="contentContainer">
             <aside>
-                <?php include("phases/overview.php") ?>
+            <?php include("./phases/overview.php")?>
             </aside>
+
             <div id="contentContainer">
                 <h1 id="contentHeadline"></h1>
                 <section id="content"></section>
@@ -27,7 +28,7 @@
         </div>
     </main>
 
-    <?php include("phases/resultDialog.php") ?>
+    <?php include("./phases/resultDialog.php")?>
 
 </body>
 
