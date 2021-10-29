@@ -9,7 +9,7 @@
 
 <script>
     $("#step_1_2_resultButton").click(function() {
-        var actualUpkeep = $("#step_1_2_actualUpkeep").val();
+        var actualUpkeep = Number($("#step_1_2_actualUpkeep").val());
 
         resultText = "";
         if ($("#actualBp").val() - actualUpkeep < 0) {
