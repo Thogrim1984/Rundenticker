@@ -81,7 +81,7 @@ function nextStep(result, actualPhase, actualStep) {
         var nextStep = 0,
             nextPhase = "";
 
-        if (roundNumbers[Number(actualPhase - 1)][Number(actualStep + 1)] != undefined) {
+        if (roundNumbers[Number(actualPhase - 1)][Number(actualStep + 1)] != null) {
             nextStep = roundNumbers[actualPhase - 1][actualStep + 1];
             nextPhase = roundNumbers[actualPhase - 1][0];
             actualizeOverview(actualPhase, Number(actualStep + 1));
