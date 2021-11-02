@@ -18,6 +18,6 @@
                         <p>Viertelanzahl: ${$("#districtCount").val()}</p>
                     `;
 
-        nextStep(result, 2, 6);
+        nextStep(result, 1, 0);
     });
 </script>
