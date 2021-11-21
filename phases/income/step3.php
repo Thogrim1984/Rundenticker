@@ -43,6 +43,6 @@ Eine WIR-Probe pro Siedlungsviertel möglich,
         } else {
             resultText = getResult([getResultObject("nothing", 0)]);
         }
-        nextStep(resultText.join("<br />", 3, 3));
+        nextStep(resultText.join("<br />"), 3, 3);
     });
 </script>

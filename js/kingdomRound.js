@@ -81,6 +81,11 @@ function nextStep(result, actualPhase, actualStep) {
         var nextStep = 0,
             nextPhase = "";
 
+            console.log("Fehlersuche");
+            console.log(roundNumbers);
+            console.log("Phase: " + Number(actualPhase - 1));
+            console.log("Phase: " + Number(actualStep + 1));
+
         if (roundNumbers[Number(actualPhase - 1)][Number(actualStep + 1)] != null) {
             nextStep = roundNumbers[actualPhase - 1][actualStep + 1];
             nextPhase = roundNumbers[actualPhase - 1][0];
